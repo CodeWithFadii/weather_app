@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterp/const.dart';
 import 'package:flutterp/screens/home_screen.dart';
+import 'package:get/get.dart';
+import 'controllers/getapi_controller.dart';
+import 'controllers/getvalues_controller.dart';
 
 void main() {
-  runApp(const MyApp());
+  Get.put(GetValuesController());
+  Get.put(GetApiController());
+  runApp(
+    const MyApp(),
+  );
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      systemNavigationBarColor: purple, // navigation bar color
+      systemNavigationBarColor: white, // navigation bar color
       statusBarColor: pinkPurple, // status bar color
     ),
   );
@@ -19,11 +26,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
       theme: theme,
-      home: const HomeScreen(),
+      home:  HomeScreen(),
     );
   }
 }

@@ -4,6 +4,8 @@ import 'package:flutterp/controllers/getvalues_controller.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'card_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   DateTime now = DateTime.now();
@@ -11,7 +13,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double sizeh = MediaQuery.of(context).size.height;
     double sizew = MediaQuery.of(context).size.width;
-    double font = MediaQuery.of(context).textScaleFactor;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -53,20 +54,22 @@ class HomeScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Icon(
-                                Icons.calendar_month_outlined,
-                                size: font * 28,
+                                Icons.list,
+                                size: sizew * 0.07,
                                 color: white,
                               ).onTap(() {
-                                // showDatePicker(context: context, initialDate: , firstDate: firstDate, lastDate: lastDate)
+                                Get.to(() => CardScreen(),
+                                    transition: Transition.leftToRightWithFade);
                               }),
                               Row(
                                 children: [
                                   Icon(
                                     Icons.location_on_outlined,
-                                    size: font * 28,
+                                    size: sizew * 0.07,
                                     color: white,
                                   ),
-                                  'Faisalabad'
+                                  controller.city
+                                      .toString()
                                       .text
                                       .size(sizew * 0.055)
                                       .white
@@ -75,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               Icon(
                                 Icons.search,
-                                size: font * 28,
+                                size: sizew * 0.07,
                                 color: white,
                               )
                             ],

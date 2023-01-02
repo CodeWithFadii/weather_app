@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterp/const.dart';
+import 'package:flutterp/screens/card_screen.dart';
 import 'package:flutterp/screens/home_screen.dart';
 import 'package:get/get.dart';
 import 'controllers/getapi_controller.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
       theme: theme,
-      home:  HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }

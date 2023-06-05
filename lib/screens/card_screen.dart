@@ -8,6 +8,8 @@ import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CardScreen extends StatefulWidget {
+  const CardScreen({super.key});
+
   @override
   State<CardScreen> createState() => _CardScreenState();
 }

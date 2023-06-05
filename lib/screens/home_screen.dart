@@ -8,7 +8,7 @@ import 'card_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-  DateTime now = DateTime.now();
+  final DateTime now = DateTime.now();
   @override
   Widget build(BuildContext context) {
     double sizeh = MediaQuery.of(context).size.height;
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                                 size: sizew * 0.07,
                                 color: white,
                               ).onTap(() {
-                                Get.to(() => CardScreen(),
+                                Get.to(() => const CardScreen(),
                                     transition: Transition.leftToRightWithFade);
                               }),
                               Row(

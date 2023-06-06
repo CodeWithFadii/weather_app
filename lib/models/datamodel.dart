@@ -20,7 +20,7 @@ class Data {
   String? dt;
   List<Weather>? weather;
   int? visibility;
-  int? pop;
+  num? pop;
   String? dtTxt;
 
   Data({this.dt, this.visibility, this.pop, this.dtTxt, this.main});

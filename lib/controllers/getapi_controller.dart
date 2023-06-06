@@ -34,11 +34,11 @@ class GetApiController extends GetxController {
       lon = position.longitude;
       log(lat.toString());
       log(lon.toString());
-    } on Exception catch (e) {
-      Get.snackbar('Error', e.toString(),
-          colorText: white,
-          duration: const Duration(seconds: 4),
-          backgroundGradient: gradientBg);
+    } on Exception {
+      // Get.snackbar('Error', e.toString(),
+      //     colorText: white,
+      //     duration: const Duration(seconds: 4),
+      //     backgroundGradient: gradientBg);
     }
   }
 
